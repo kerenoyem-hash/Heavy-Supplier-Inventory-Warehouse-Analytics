@@ -1,157 +1,142 @@
-# 📦 Heavy Supplier, Inventory & Warehouse Analytics
+<div align="center">
 
-### CadetX Virtual Work Experience – Team Project
+# CADETX VIRTUAL WORK EXPERIENCE
 
----
+## WEEK 01 – DATA PROFILING
 
-## 🚀 Project Overview
+### HEAVY SUPPLIER, INVENTORY & WAREHOUSE ANALYTICS
 
-This repository contains our team's work for the **CadetX Virtual Work Experience Programme**. Over 12 weeks, we collaborate in agile sprints to analyse supply-chain and warehouse data, producing portfolio-ready deliverables that simulate the workflow of a professional analytics team.
-
-**Our mission:**
-
-- Optimise inventory levels and reduce capital locked in stock.
-- Identify fast-moving, slow-moving, and critical products.
-- Improve warehouse space utilisation and operational efficiency.
-- Detect risks and anomalies early.
-- Support procurement and planning decisions with data-driven insights.
+</div>
 
 ---
 
-## 👥 Team & Roles
+## 📌 Project Overview
 
-We work as a team of three:
+This project is part of the CadetX Virtual Work Experience programme. It focuses on analysing supplier, inventory, warehouse, purchasing, and sales data to generate insights that can support better business decisions.
 
-- **Data Analysts (2):** Data profiling, KPI development, dashboards, and reporting.
-- **Data Scientist (1):** Forecasting, risk prediction, and optimisation.
+During Week 01, the primary activity was **data profiling** to understand the structure, quality, and characteristics of the datasets before proceeding with data cleaning and analysis.
 
-The **Scrum Master** role rotates weekly to encourage shared leadership and accountability.
+## 🎯 Objectives
+
+- Understand the structure of the available datasets.
+- Identify missing values across all tables.
+- Check for duplicate records.
+- Examine column names and data types.
+- Identify potential data quality and standardisation issues.
+- Establish a foundation for subsequent analysis.
+
+## 📊 Dataset Overview
+
+The project contains 12 tables covering different aspects of the business.
+
+| S/N | Table Name | Rows | Columns |
+|---|---|---:|---:|
+| 1 | branches | 6 | 13 |
+| 2 | products | 30 | 23 |
+| 3 | inventory_master | 180 | 8 |
+| 4 | suppliers | 8 | 12 |
+| 5 | customers | 500 | 15 |
+| 6 | invoices | 18,033 | 10 |
+| 7 | payments | 19,257 | 5 |
+| 8 | purchase_orders_header | 24,000 | 10 |
+| 9 | purchase_orders_lines | 155,495 | 9 |
+| 10 | sales_orders_header | 20,000 | 11 |
+| 11 | sales_orders_lines | 130,402 | 9 |
+| 12 | stock_ledger | 237,230 | 9 |
+
+## 🔍 Activities Performed
+
+1. Loaded the project database using DuckDB.
+2. Retrieved the available tables.
+3. Examined the structure of each table.
+4. Checked the number of rows and columns.
+5. Identified missing values.
+6. Checked for duplicate row patterns.
+7. Reviewed column data types.
+8. Documented the profiling findings.
+
+## 📈 Key Findings
+
+### 1. Missing Values
+
+The profiling exercise identified missing values in one table:
+
+- **Table:** `purchase_orders_header`
+- **Column:** `received_date`
+- **Missing values:** 2,370
+
+The missing values may require further investigation during the data-cleaning stage.
+
+### 2. Duplicate Records
+
+No duplicate row patterns were identified across the 12 tables during the profiling exercise.
+
+### 3. Potential Data Standardisation Areas
+
+The following columns were identified for further review:
+
+| Table | Column | Current Data Type | Recommended Review |
+|---|---|---|---|
+| branches | warehouse_capacity | VARCHAR | Convert to numeric where appropriate |
+| products | dimensions_cm | VARCHAR | Extract dimensions into separate numeric columns |
+| suppliers | pincode | BIGINT | Review identifier format |
+| customers | pincode | BIGINT | Review identifier format |
+| sales_orders_lines | unit_price | BIGINT | Review financial data type |
+| sales_orders_lines | line_total | BIGINT | Review financial data type |
+
+These are potential standardisation areas, not confirmed data errors.
+
+## ⚠️ Data Quality Considerations
+
+Further validation will be required to investigate:
+
+- Primary key uniqueness.
+- Foreign key relationships.
+- Date consistency.
+- Negative or invalid numerical values.
+- Financial calculations and reconciliation.
+- Inventory stock consistency.
+
+These checks are recommended for subsequent stages of the project.
+
+## 📁 Deliverables
+
+The Week 01 deliverables include:
+
+- Data profiling notebook.
+- Master table profiling report.
+- Data quality observations.
+- Draft business questions to guide subsequent analysis.
+
+## 🛠️ Tools and Technologies
+
+- Python
+- Jupyter Notebook
+- DuckDB
+- SQL
+- GitHub
+
+## 🚀 Next Steps
+
+The next stage will focus on data cleaning and standardisation, including:
+
+- Handling missing values.
+- Standardising date columns.
+- Converting appropriate columns to suitable data types.
+- Cleaning categorical values.
+- Extracting product dimensions into separate columns.
+- Preparing the datasets for further analysis.
+
+## 📝 Conclusion
+
+Week 01 established an understanding of the structure and quality of the project datasets. The profiling exercise identified missing values in `purchase_orders_header.received_date` and highlighted potential areas for data standardisation.
+
+These findings provide a foundation for the data-cleaning and transformation activities in Week 02.
 
 ---
 
-## 📅 Weekly Workflow
+### Prepared By
 
-Our project follows a structured sprint workflow:
-
-1. **Plan** – Define sprint goals and select tasks.
-2. **Build** – Perform data cleaning, analysis, dashboard development, and modelling.
-3. **Collaborate** – Participate in stand-ups, reviews, and issue resolution.
-4. **Submit** – Commit and push deliverables to GitHub through the agreed workflow.
-5. **Review** – Conduct quality checks and review deliverables for certification and reference purposes.
-
----
-
-## 🗺️ Project Roadmap
-
-| Weeks | Focus Area |
-|---|---|
-| Weeks 1–3 | Data foundation and exploration |
-| Weeks 4–6 | Core product, inventory, and warehouse analytics |
-| Weeks 7–9 | Supplier, customer, and predictive analytics |
-| Weeks 10–12 | Business intelligence dashboards, strategy, and final delivery |
-
----
-
-## 📊 Task Catalogue
-
-Our project deliverables cover the following analytical areas:
-
-### 1. Data Preparation
-- Data profiling and quality assessment.
-- Data cleaning and standardisation.
-- Data integration.
-- Feature engineering.
-
-### 2. Product & Inventory Analytics
-- Inventory turnover analysis.
-- Stock health assessment.
-- ABC inventory classification.
-- Identification of fast-moving and slow-moving products.
-
-### 3. Warehouse Efficiency
-- Warehouse space utilisation.
-- Inventory throughput analysis.
-- Identification of operational bottlenecks.
-- Warehouse efficiency assessment.
-
-### 4. Supplier Analytics
-- Supplier reliability assessment.
-- Supplier risk analysis.
-- Supplier diversification opportunities.
-
-### 5. Customer Analytics
-- Customer segmentation.
-- Customer Lifetime Value (CLV) analysis.
-- Customer churn analysis.
-
-### 6. Forecasting & Optimisation
-- Demand forecasting.
-- Stockout risk prediction.
-- Reorder optimisation.
-- Inventory planning recommendations.
-
-### 7. Business Intelligence Dashboards
-- KPI framework development.
-- Performance monitoring.
-- Interactive dashboards and reports.
-
-### 8. Strategy & Recommendations
-- Inventory optimisation strategies.
-- Cost reduction opportunities.
-- Operational efficiency improvements.
-- Data-driven business recommendations.
-
----
-
-## 📂 Dataset
-
-The project uses CSV files containing information about branches, customers, inventory, products, suppliers, purchases, sales, invoices, payments, and stock movements.
-
-### Dataset Files
-
-- `branches.csv`
-- `customers.csv`
-- `inventorymaster.csv`
-- `invoices.csv`
-- `payments.csv`
-- `products.csv`
-- `purchaseordersheader.csv`
-- `purchaseorderslines.csv`
-- `salesordersheader.csv`
-- `salesorderslines.csv`
-- `stockledger.csv`
-- `suppliers.csv`
-
-**Additional documentation:**
-
-- `Fields Documentation.docx` – Reference documentation describing the dataset fields.
-
----
-
-### Team Members
-
-|**Name**|**Role**|
-|-|-|
-|**Keren**|**Data Analyst**|
-|**Timothy**|**Data Analyst**|
-|**Thomars**|**Data Scientist**|
-
-
-```text
-Heavy-Supplier-Inventory-Warehouse-Analytics/
-│
-├── Week_01/
-│   └── Build/
-├── Week_02/
-├── Week_03/
-├── ...
-├── dashboards/
-├── models/
-├── docs/
-└── README.md
-
-
-
-
-
-
+**Keren Oyem**  
+**Role:** Data Analyst   
+**Programme:** CadetX Virtual Work Experience
