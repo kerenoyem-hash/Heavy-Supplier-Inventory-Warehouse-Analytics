@@ -1,0 +1,15 @@
+﻿metric,value
+Product-branch pairs analysed,180.0
+Total stock value at unit cost (INR),278765513700.0
+Excess stock value above max levels (INR),277933438210.0
+Excess as % of total stock value,99.70151419414977
+Pairs in Overstock,180.0
+Pairs at/below reorder point or worse (understock),0.0
+Inventory turnover 2024 (times per year),0.01128831034997912
+Days of inventory on hand 2024,32334.33425230687
+Share of stock value older than 365 days (%),82.72328399565588
+Pairs classed Dead or no sales in 6 months,0.0
+Overall IN : OUT ratio (all years),18.02635621455503
+Purchase units / sales units per line (ratio),15.226935306948187
+Months to sell the excess at current sales,1141.1359679301163
+PO value in last 12 months on pairs already overstocked (INR),50826098215.04
